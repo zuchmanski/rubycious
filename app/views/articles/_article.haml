@@ -1,0 +1,22 @@
+- if controller.action_name == "index" && cookies[:last_visit].to_i == article.id
+  %li.last_visit
+    %span last visit
+
+%li.article{"data-article-id" => article.id}
+  %span.meta
+    = article.updated_at.strftime("%d/%m/%y %H:%M")
+    %br
+    by
+    %strong= article.user.username
+  - if article.voted_by?(current_user)
+    %span.points.voted= article.points.count
+  - else
+    = link_to article.points.count, points_path(:article_id => article.id), :method => :post, :remote => :true, :class => "points unvoted"
+  = link_to article.title, article.url, :class => 'link'
+  %small.hostname= article.hostname
+  - if admin?
+    %span.admin
+      - unless article.verified?
+        %small= link_to "verify", verify_article_path(article), :method => :put, :class => "verify"
+      %small= link_to "delete", article, :method => :delete, :confirm => "Are you sure?", :class => "delete"
+  %p= formatted_tags article.body

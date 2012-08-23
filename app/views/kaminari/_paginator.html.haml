@@ -1,0 +1,8 @@
+:css
+  .pagination { text-align: center; margin-top: 40px; }
+  .pagination a { padding:.1em .3em;margin:.2em; }
+  .pagination span.disabled { padding:.1em .3em; margin:.2em; color:#ddd; }
+= paginator.render do
+  .pagination<
+    = prev_page_tag
+    = next_page_tag

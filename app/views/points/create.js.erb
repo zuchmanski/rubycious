@@ -1,0 +1,8 @@
+<% if current_user %>
+  var li = $('#content ul li.article[data-article-id=<%= @article.id %>]');
+  var new_li = "<%=j render @article %>"
+  li.replaceWith(new_li);
+<% else %>
+  var notice = "<%=j render :partial => 'shared/notice', :locals => {:notice => 'Please, log in to vote.'} %>";
+  $('#notice').replaceWith(notice);
+<% end %>

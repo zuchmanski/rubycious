@@ -1,0 +1,27 @@
+= form_for @article, :html => {:class => "form-horizontal"} do |f|
+  .control-group.title
+    = f.label :title, :class => 'control-label'
+    .controls
+      = f.text_field :title, :class => 'input-xlarge'
+      - if @article.errors[:title]
+        .errors= @article.errors[:title].join(", ")
+
+  .control-group.url
+    = f.label :url, :class => 'control-label'
+    .controls
+      = f.text_field :url, :class => 'input-xlarge'
+      - if @article.errors[:url]
+        .errors= @article.errors[:url].join(", ")
+
+  .control-group.body
+    = f.label :body, :class => 'control-label'
+    .controls
+      = f.text_area :body
+      - if @article.errors[:body]
+        .errors= @article.errors[:body].join(", ")
+      %p#char-limit
+        %span#char-counter> 0
+        \/160
+
+  .form-actions
+    = f.submit "Submit", :class => "btn btn-primary"

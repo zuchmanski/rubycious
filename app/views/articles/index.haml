@@ -1,0 +1,8 @@
+#topbar
+  %span.points points
+  %span.title article
+  %span.other= link_to "recently submitted", unverified_path
+%ul
+  = render @articles
+
+= paginate @articles

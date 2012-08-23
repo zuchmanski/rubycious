@@ -1,0 +1,8 @@
+#topbar
+  %span.points points
+  %span.title article
+  %span.other Articles tagged as "#{params[:tag]}"
+%ul
+  = render @articles
+
+= paginate @articles

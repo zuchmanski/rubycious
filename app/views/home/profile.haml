@@ -1,0 +1,22 @@
+#profile_container
+  #submitted
+    %h2 Articles submitted by me
+    %ul
+      - current_user.articles.each do |article|
+        %li
+          %span.points (#{article.points.count})
+          = link_to article.title, article.url
+          %span.body
+            = formatted_tags(article.body)
+            %small (#{article.created_at.strftime("%d/%m/%y %H:%M")})
+
+  #voted
+    %h2 Articles upvoted by me
+    %ul
+      - current_user.voted_articles.each do |article|
+        %li
+          %span.points (#{article.points.count})
+          = link_to article.title, article.url
+          %span.body
+            = formatted_tags(article.body)
+            %small (#{article.created_at.strftime("%d/%m/%y %H:%M")})

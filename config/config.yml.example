@@ -1,0 +1,14 @@
+production:
+  github:
+    public_key: '123'
+    private_key: '123456'
+
+development:
+  github:
+    public_key: '123'
+    private_key: '123456'
+
+test:
+  github:
+    public_key: '123'
+    private_key: '123456'

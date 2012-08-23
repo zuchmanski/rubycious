@@ -1,0 +1,11 @@
+#topbar
+  %span.points points
+  %span.title article
+  %span.other= link_to "main page", root_path
+%ul
+  - unless @articles.count == 0
+    = render @articles
+  - else
+    %h3 Sorry, no new articles.
+
+= paginate @articles

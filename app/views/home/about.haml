@@ -1,0 +1,29 @@
+#about_container
+  #about
+    %h2 About
+    %p
+      Are you bored of constant checking twitter profiles/rss reader to get fresh informations about Ruby? Rubycious.com is a simple website, that collects the most interesting stuff around this great tool. It does just one thing - stores users' links to great resources, which are next presented in nice and clean way.
+    %h3 For what purpose? There is popular Hacker News.
+    %p
+      Yes, there is. But 1) on Hacker News there is relatively few links about Ruby and Rails, 2) hn is too popular, it is really hard to get attention to article (because of number of submits), especially for not known authors.
+
+  #visual
+    %h2 Features
+    .grid2
+      %h3 See what's new from last visit:
+      %p= image_tag "last_visit.png"
+    .grid2
+      %h3 Check out recently submited articles:
+      %p= image_tag "never_lose.png"
+
+  %div{:style => "clear: both;"}
+
+  #contact
+    %h2 Contact
+    %p
+      / If you have any questions or feedback, check out the issues on
+      / = link_to 'sebcioz/rubycious', 'http://github.com/sebcioz/rubycious/issues'
+      / on GitHub or mail me at #{mail_to 'sebcioz@gmail.com'}.
+      If you have any questions or feedback mail me at #{mail_to 'sebcioz@gmail.com'} or find me on
+      %br
+      twitter: #{link_to "@sebcioz", "https://twitter.com/#!/sebcioz"}.
